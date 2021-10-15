@@ -3,13 +3,14 @@ import CreateUserService from '../services/CreateUserSerice';
 
 class CreateUserController {
   async Handle(request: Request, response: Response) {
-    const { username, email, isAdmin, password } = request.body;
+    const { username, email, cpf, isAdmin, password } = request.body;
 
     const usersService = new CreateUserService();
 
     const user = await usersService.Execute({
       username,
       email,
+      cpf,
       isAdmin,
       password,
     });

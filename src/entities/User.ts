@@ -22,6 +22,9 @@ class User {
   password: string;
 
   @Column()
+  cpf: string;
+
+  @Column()
   isAdmin: boolean;
 
   @CreateDateColumn()

@@ -1,10 +1,10 @@
 import { getCustomRepository } from 'typeorm';
-import TagsRepositories from '../repositories/TagsRepository';
+import TagsRepository from '../repositories/TagsRepository';
 import ErrorResponse from '../utils/ErrorResponse';
 
 class CreateTagService {
   async Execute(name: string) {
-    const tagsRepositories = getCustomRepository(TagsRepositories);
+    const tagsRepositories = getCustomRepository(TagsRepository);
 
     if (!name) {
       throw new ErrorResponse(411, 'Name is empty');
